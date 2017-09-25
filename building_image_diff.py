@@ -34,7 +34,7 @@ def _diff(list1, list2):
 
     for l in list1:
         if l not in list2:
-            only.append(l)
+            only.append(l + '\n')
 
     return only
 
