@@ -20,21 +20,21 @@ def read(file_name_left, file_name_right):
         only_left_data = _diff(list_left, list_right)
 
         print("only left  : " + str(len(only_left_data)))
-        f_w_left.writelines(only_left_data)
+        f_w_left.writelines(list(map(lambda x: x + '\n', only_left_data)))
 
         # list_rightのみ
         print("==rightのみ==")
         only_right_data = _diff(list_right, list_left)
 
         print("only right : " + str(len(only_right_data)))
-        f_w_right.writelines(only_right_data)
+        f_w_right.writelines(list(map(lambda x: x + '\n', only_right_data)))
 
 def _diff(list1, list2):
     only = []
 
     for l in list1:
         if l not in list2:
-            only.append(l + '\n')
+            only.append(l)
 
     return only
 
